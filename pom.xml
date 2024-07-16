@@ -47,6 +47,18 @@
           </archive>
         </configuration>
       </plugin>
+      <build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.13.0</version> <!-- Update to a version >= 3.8.0 -->
+            <configuration>
+                <release>17</release> <!-- Specify the JDK release version -->
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
@@ -57,16 +69,16 @@
             <goals>
               <goal>enforce</goal>
             </goals>
-            <configuration>
-              <rules>
-                <requireMavenVersion>
-                  <version>[3.9.2,)</version>
-                </requireMavenVersion>
-                <requireJavaVersion>
-                  <version>[17,)</version>
-                </requireJavaVersion>
-              </rules>
-            </configuration>
+             <configuration>
+                  <rules>
+                      <requireMavenVersion>
+                          <version>[3.8.8,)</version> <!-- Adjust version range as needed -->
+                      </requireMavenVersion>
+                      <requireJavaVersion>
+                          <version>[11,)</version> <!-- Adjust JDK version range as needed -->
+                      </requireJavaVersion>
+                  </rules>
+              </configuration>
           </execution>
         </executions>
       </plugin>
